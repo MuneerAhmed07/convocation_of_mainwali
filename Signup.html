@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singup</title>
+    <!-- Custom CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="main">
+        <header class="header">
+            <h1 class="h_heading">Convocation 2024 UMW</h1>
+        </header>
+        <!-- Section -->
+    <div class="main_container">
+
+        <h2 class="sign_heading">Registration Form</h2>
+
+        <!-- Form section -->
+        <form action="" class="form">
+
+            <div class="input_container">
+                <!-- First name -->
+                <div class="input_box margin">
+                    <label for="username">Name <span>*</span></label>
+                    <input type="text" placeholder="username" id="username" class="input" autocomplete="off" required>
+                </div>
+                <!-- last name -->
+                <div class="input_box">
+                    <label for="f_name">Father Name <span>*</span></label>
+                    <input type="text" placeholder="father name" id="f_name" class="input" autocomplete="off" required>
+                </div>
+            </div>
+
+            <div class="input_container">
+                <!-- date of birth -->
+                <div class="input_box margin">
+                    <label for="birth_date">Birth data <span>*</span></label>
+                    <input type="date" id="birth_date" class="input" required>
+                </div>
+                <!-- Radio button -->
+                <div class="input_box">
+                    <label for="gender">Gender <span>*</span></label>
+                    <div class="gender">
+                        <input type="radio" id="gender" name="male" checked required> <span>Male</span>
+                        <input type="radio" id="gender" name="male" required> <span>Female</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input_container">
+                <!-- Email -->
+                <div class="input_box margin">
+                    <label for="cnic">CNIC <span>*</span></label>
+                    <input type="number" placeholder="Enter CNIC" id="cnic" class="input" autocomplete="off" required>
+                </div>
+                <!-- Phone number -->
+                <div class="input_box">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" placeholder="Email" id="email" class="input" autocomplete="off" required>
+                </div>
+            </div>
+
+            <div class="input_container">
+                <!-- password -->
+                <div class="input_box margin">
+                    <label for="password">Password <span>*</span></label>
+                    <input type="password" placeholder="Enter password" id="password" class="input" autocomplete="off" required>
+                </div>
+                <!-- Confirm password -->
+                <div class="input_box">
+                    <label for="confirm_password">Confirm Password <span>*</span></label>
+                    <input type="password" placeholder="confirm password" id="confirm_password" class="input" autocomplete="off" required>
+                </div>
+            </div>
+
+            <div class="input_container">
+                <!-- Country -->
+                <div class="input_box margin">
+                    <label for="country">Program <span>*</span></label>
+                    <select name="cars" id="country" class="input" required>
+                        <option value="bscs" selected>BSCS</option>
+                        <option value="bsit">BSIT</option>
+                    </select>
+                </div>
+                <!-- City -->
+                <div class="input_box">
+                    <label for="reg_no">Registration Number <span>*</span></label>
+                    <input type="text" placeholder="enter registration number" id="reg_no" class="input" autocomplete="off" required>
+                </div>
+            </div>
+
+            <div class="input_container">
+                <!-- Phone Number -->
+                <div class="input_box margin">
+                    <label for="contact">Contact Number <span>*</span></label>
+                    <div class="no_input flex">
+                        <input type="number" placeholder="Contact Number" id="contact" class="input" autocomplete="off" required>
+                        <button>Send OTP</button>
+                    </div>
+                </div>
+                <!-- OTP -->
+                <div class="input_box">
+                    <label for="number">OTP</label>
+                    <div class="no_input flex">
+                        <input type="number" placeholder="Enter OTP" id="number" class="input" autocomplete="off">
+                        <button>Verify</button>
+                    </div>
+                </div>
+            </div>
+
+            <input type="button" value="submit" class="button">
+
+        </form>
+        <span class="register_link">Already have an Account? <a href="index.html">SignIn</a></span>
+    </div>
+    </main>
+</body>
+</html>
