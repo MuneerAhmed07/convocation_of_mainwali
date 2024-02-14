@@ -283,13 +283,14 @@ label span {
 .slip_div {
     width: 90%;
     background: #fafafa;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
     position: absolute;
     top: 50px;
     left: 80px;
     display: none;
     border-radius: 8px;
-    padding: 20px;
+    padding: 20px 20px;
+    margin: 40px 0;
 }
 
 .slip_div.active {
@@ -306,6 +307,7 @@ label span {
     font-size: 16px;
     border-radius: 4px;
     float: right;
+    cursor: pointer;
 }
 
 .fee_container {
