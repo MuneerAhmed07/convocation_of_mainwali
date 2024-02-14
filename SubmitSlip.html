@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convocation 2024 UMW</title>
+    <!-- custom CSS File LinK -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main id="main">
+        <header class="header">
+            <h1 class="h_heading">Convocation 2024 UMW</h1>
+        </header>
+        <!-- Section -->
+        <section class="section deshboard_section">
+            <h1>Upload a Scan Slip Copy</h1>
+            <form action="" class="guest_form">
+                <div class="input_container">
+                    <div class="input_box margin">
+                        <label for="slip_id">Enter Slip ID <span>*</span></label>
+                        <div class="no_input flex">
+                            <input type="text" placeholder="Enter slip ID" id="slid_id" class="input" autocomplete="off">
+                            <button>Verify</button>
+                        </div>
+                    </div>
+                    <div class="input_box">
+                        <label for="slip_copy">Upload Slip Copy <span>*</span> (size 25KB)</label>
+                        <input type="file" id="slip_copy" class="input" required>
+                    </div>
+                </div>
+
+                <label for="user_image">Upload User Image <span>*</span> (size 25KB)</label>
+                <input type="file" id="user_image" class="input" required>
+
+                <input type="submit" class="button" value="Submit">
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>

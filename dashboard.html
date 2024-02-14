@@ -7,6 +7,7 @@
     <title>Dashboard</title>
     <!-- custom CSS File LinK -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slip.css">
 </head>
 
 <body>
@@ -17,62 +18,238 @@
         </header>
         <!-- Section -->
         <section class="section deshboard_section">
-            <div class="tabs">
-                <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
-                <label for="tab1" class="tabs__label">Add Guest</label>
-                <div class="tabs__content">
-                    <form action="" class="guest_form">
-                        <div class="input_container">
-                            <div class="input_box margin">
-                                <label for="guest_name">Guest Name <span>*</span></label>
-                                <input type="text" placeholder="Enter guest name" id="guest_name" class="input"
-                                    autocomplete="off" required>
-                            </div>
-                            <div class="input_box">
-                                <label for="guest_f_name">Father Name <span>*</span></label>
-                                <input type="text" placeholder="Enter guest Father name" id="guest_f_name" class="input"
-                                    autocomplete="off" required>
-                            </div>
-                        </div>
-                        <div class="input_container">
-                            <div class="input_box margin">
-                                <label for="guest_cnic">Guest CNIC <span>*</span></label>
-                                <input type="number" placeholder="enter guest CNIC" id="guest_cnic" class="input"
-                                    autocomplete="off" required>
-                            </div>
-                            <div class="input_box">
-                                <label for="guest_image">Guest Image<span>*</span> (size 25KB)</label>
-                                <input type="file" id="guest_image" class="input" required>
-                            </div>
-                        </div>
-                        <input type="submit" class="button" value="Submit">
-                    </form>
+            <div id="step1" class="form-step active">
+                <h2 class="step_form_heading">Invite Guest?</h2>
+                <div class="form-group">
+                    <label for="invite" class="text">Do you want to invite a guest?</label><br>
+                    <input type="radio" id="invite-yes" name="invite" value="yes" checked>
+                    <label for="invite-yes">Yes</label>
+                    <input type="radio" id="invite-no" name="invite" value="no">
+                    <label for="invite-no">No</label>
                 </div>
-                <input type="radio" class="tabs__radio" name="tabs-example" id="tab2">
-                <label for="tab2" class="tabs__label">Submit Slip Copy</label>
-                <div class="tabs__content">
-                    <form action="" class="guest_form">
-                        <div class="input_container">
-                            <div class="input_box margin">
-                                <label for="slip_id">Enter Slip ID <span>*</span></label>
-                                <input type="text" placeholder="Enter slip ID" id="slip_id" class="input"
-                                    autocomplete="off" required>
+                <button class="generate-button next_button" onclick="nextStep('next')">Next</button>
+            </div>
+            <div id="step2" class="form-step">
+                <h2 class="step_form_heading">Enter Guest Information</h2>
+                <form action="" class="guest_form">
+                    <div class="input_container">
+                        <div class="input_box margin">
+                            <label for="guest_name">Guest Name <span>*</span></label>
+                            <input type="text" placeholder="Enter guest name" id="guest_name" class="input"
+                                autocomplete="off">
+                        </div>
+                        <div class="input_box">
+                            <label for="guest_f_name">Father Name <span>*</span></label>
+                            <input type="text" placeholder="Enter guest Father name" id="guest_f_name" class="input"
+                                autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="input_container">
+                        <div class="input_box margin">
+                            <label for="guest_cnic">Guest CNIC <span>*</span></label>
+                            <input type="number" placeholder="enter guest CNIC" id="guest_cnic" class="input"
+                                autocomplete="off">
+                        </div>
+                        <div class="input_box">
+                            <label for="guest_image">Guest Picture<span>*</span> (size 25KB)</label>
+                            <input type="file" id="guest_image" class="input">
+                        </div>
+                    </div>
+                    <button class="generate-button next_button" id="submit_button"
+                        onclick="nextStep('back')">Back</button>
+                    <button type="button" class="generate-button next_button"
+                        onclick="nextStep('submit')">Submit</button>
+                </form>
+            </div>
+            <div id="step3" class="form-step">
+                <h2 class="step_form_heading">Generate Slip</h2>
+                <button class="generate-button next_button" id="submit_button" onclick="nextStep('back')">Back</button>
+                <button type="button" class="generate-button next_button" onclick="nextStep('generate')">Generate
+                    Slip</button>
+            </div>
+            <!-- SLip Container -->
+            <div class="slip_div" id="slip_container">
+                <button class="download" id="download_button">Download</button>
+                <div class="fee_container" id="fee_slip_download">
+                    <div class="fullpage">
+                        <div class="slip_section">
+                            <div class="head_section">
+                                <div class="logo_sect">
+                                    <img class="umwlogo" src="logoumw.jpg" />
+                                    <img class="boplogo" src="BOP!.png" />
+                                </div>
+                                <div class="account_sect">
+                                    <h2>University 0f Mianwali</h2>
+                                    <span>The Bank of Punjab</span>
+                                    <span>A/C.NO 6510204384600028</span>
+                                    <span>Copy of Bank</span>
+                                    <span>Slip.ID 6510204384600028</span>
+                                </div>
                             </div>
-                            <div class="input_box">
-                                <label for="slip_copy">Upload Slip Copy <span>*</span> (size 25KB)</label>
-                                <input type="file" id="slip_copy" class="input" required>
+                            <div class="stud_info_sect">
+                                <form action="" class="form_info">
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Due Date:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Name:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Father Name:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">CNIC No:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Subject:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                </form><hr/>
+                            </div>
+                            <div class="fees_sect">
+                                    <div class="fees_type_sect">
+                                        <span>Convocational Fees</span>
+                                        <span>Guest Fees</span>
+                                    </div>
+                                    <hr>
+                                    <div class="fees_amount">
+                                        <span>10000</span>
+                                        <span>10000</span>
+                                    </div>
+                            </div>
+                            <div class="total">
+                                <span>Total</span>
+                                <span>150000</span>
                             </div>
                         </div>
-
-                        <label for="user_image">Upload User Image <span>*</span> (size 25KB)</label>
-                        <input type="file" id="user_image" class="input" required>
-
-                        <input type="submit" class="button" value="Submit">
-                    </form>
+                        <hr>
+                        <div class="slip_section">
+                            <div class="head_section">
+                                <div class="logo_sect">
+                                    <img class="umwlogo" src="logoumw.jpg" />
+                                    <img class="boplogo" src="BOP!.png" />
+                                </div>
+                                <div class="account_sect">
+                                    <h2>University 0f Mianwali</h2>
+                                    <span>The Bank of Punjab</span>
+                                    <span>A/C.NO 6510204384600028</span>
+                                    <span>Copy of University</span>
+                                    <span>Slip.ID 6510204384600028</span>
+                
+                                </div>
+                            </div>
+                            <div class="stud_info_sect">
+                                <form action="" class="form_info">
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Due Date:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Name:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Father Name:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">CNIC No:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Subject:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                </form><hr/>
+                            </div>
+                            <div class="fees_sect">
+                                    <div class="fees_type_sect">
+                                        <span>Convocational Fees</span>
+                                        <span>Guest Fees</span>
+                                    </div>
+                                    <hr>
+                                    <div class="fees_amount">
+                                        <span>10000</span>
+                                        <span>10000</span>
+                                    </div>
+                            </div>
+                            <div class="total">
+                                <span>Total</span>
+                                <span>150000</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="slip_section">
+                            <div class="head_section">
+                                <div class="logo_sect">
+                                    <img class="umwlogo" src="logoumw.jpg" />
+                                    <img class="boplogo" src="BOP!.png" />
+                                </div>
+                                <div class="account_sect">
+                                    <h2>University 0f Mianwali</h2>
+                                    <span>The Bank of Punjab</span>
+                                    <span>A/C.NO 6510204384600028</span>
+                                    <span>Copy of Depositor</span>
+                                    <span>Slip.ID 6510204384600028</span>
+                                </div>
+                            </div>
+                            <div class="stud_info_sect">
+                                <form action="" class="form_info">
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Due Date:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Name:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Father Name:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">CNIC No:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                    <div class="input_sect">
+                                        <label class="labels" for="due_date">Subject:</label>
+                                        <input type="text" id="due_date" class="inputs" />
+                                    </div>
+                                </form><hr/>
+                            </div>
+                            <div class="fees_sect">
+                                    <div class="fees_type_sect">
+                                        <span>Convocational Fees</span>
+                                        <span>Guest Fees</span>
+                                    </div>
+                                    <hr>
+                                    <div class="fees_amount">
+                                        <span>10000</span>
+                                        <span>10000</span>
+                                    </div>
+                            </div>
+                            <div class="total">
+                                <span>Total</span>
+                                <span>150000</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Script File -->
+    <script src="dashboard.js"></script>
 
 </body>
 

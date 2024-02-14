@@ -83,7 +83,15 @@ html {
 .register_link {
     display: inline-block;
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 20px;
+    font-weight: bold;
+    animation:  fadeEfect 1s infinite linear;
+}
+
+@keyframes fadeEfect {
+    50%{
+        opacity: 0;
+    }
 }
 
 /* Instruction */
@@ -227,50 +235,83 @@ label {
     opacity: .7;
 }
 
-/* ------------------CSS For Dashboard */
-
-.deshboard_section {
-    width: 50%;
-}
-.tabs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  
-  .tabs__label {
-    padding: 10px 16px;
-    cursor: pointer;
-    margin-bottom: 50px;
-  }
-  
-  .tabs__radio {
-    display: none;
-  }
-  
-  .tabs__content {
-    order: 1;
-    width: 100%;
-    line-height: 1.5;
-    font-size: 0.9em;
-    display: none;
-  }
-  
-  .tabs__radio:checked + .tabs__label {
-    font-weight: bold;
-    color: blue;
-    border-bottom: 2px solid blue;
-  }
-  
-  .tabs__radio:checked + .tabs__label + .tabs__content {
-    display: initial;
-  }
-  
 label span {
     color: red;
   }
+
+/* ------------------CSS For Dashboard */
+
+.deshboard_section {
+    padding: 20px 25px;
+    width: 50%;
+}
+
+.form-group .text {
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.step_form_heading {
+    padding-bottom: 20px;
+}
+
+.form-step {
+    display: none;
+}
+.form-step.active {
+    display: block;
+}
+
+.guest_form {
+    margin-top: 30px;
+}
+
+.next_button {
+    margin-top: 20px;
+    background: blue;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 28px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Slip generated container */
+.slip_div {
+    width: 90%;
+    background: #fafafa;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    display: none;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.slip_div.active {
+    display: block;
+}
+
+.download {
+    background: blue;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    padding: 8px 28px;
+    font-size: 16px;
+    border-radius: 4px;
+    float: right;
+}
+
+.fee_container {
+    margin-top: 100px;
+}
+
 
 
 
