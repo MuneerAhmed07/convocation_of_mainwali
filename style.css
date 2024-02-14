@@ -312,6 +312,25 @@ label span {
     margin-top: 100px;
 }
 
+/* Submit Slip Page */
+
+.distinguish {
+    margin: 20px 0px;
+}
+
+.distinguish p {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.distanguish_select {
+    display: none;
+}
+
+.distanguish_select.active {
+    display: block;
+}
+
 
 
 

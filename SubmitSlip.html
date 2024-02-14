@@ -34,10 +34,41 @@
                 <label for="user_image">Upload User Image <span>*</span> (size 25KB)</label>
                 <input type="file" id="user_image" class="input" required>
 
+                <div class="distinguish">
+                    <p>Do you have any distanguish certificate?</p>
+                    <input type="radio" id="yes" name="invite" value="yes">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no" name="invite" value="no">
+                    <label for="no">No</label>
+                </div>
+
+                <div class="input_box margin distanguish_select" id="select_container">
+                    <label for="country">Select Distanguish certificate  <span>*</span></label>
+                    <select name="certificate" id="certificate" class="input" required>
+                        <option value="silver_madel" selected>Silver Medal</option>
+                        <option value="gold_madel">Gold Medal</option>
+                        <option value="Distinction_certificate">Distinction Certificate</option>
+                    </select>
+                </div>
+
                 <input type="submit" class="button" value="Submit">
             </form>
         </section>
     </main>
+
+    <script>
+        var DistanguishButtonYes = document.getElementById('yes');
+        var DistanguishButtonNo = document.getElementById('no');
+        var DistanguishMenu = document.getElementById("select_container");
+
+        DistanguishButtonYes.addEventListener("click", () => {
+            DistanguishMenu.classList.add("active");
+        });
+        DistanguishButtonNo.addEventListener("click", () => {
+            DistanguishMenu.classList.remove("active");
+        });
+
+    </script>
     
 </body>
 </html>
