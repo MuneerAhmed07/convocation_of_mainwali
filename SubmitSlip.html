@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <!-- custom CSS File LinK -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <main id="main">
@@ -21,7 +23,8 @@
                     <div class="input_box margin">
                         <label for="slip_id">Enter Slip ID <span>*</span></label>
                         <div class="no_input flex">
-                            <input type="text" placeholder="Enter slip ID" id="slid_id" class="input" autocomplete="off">
+                            <input type="text" placeholder="Enter slip ID" id="slid_id" class="input"
+                                autocomplete="off">
                             <button>Verify</button>
                         </div>
                     </div>
@@ -43,12 +46,40 @@
                 </div>
 
                 <div class="input_box margin distanguish_select" id="select_container">
-                    <label for="country">Select Distanguish certificate  <span>*</span></label>
+                    <label for="country">Select Distanguish certificate <span>*</span></label>
                     <select name="certificate" id="certificate" class="input" required>
-                        <option value="silver_madel" selected>Silver Medal</option>
-                        <option value="gold_madel">Gold Medal</option>
-                        <option value="Distinction_certificate">Distinction Certificate</option>
+                        <option value="silver_madel" selected>Select your certificate</option>
+                        <option value="silver_madel" class="medal">Silver Medal</option>
+                        <option value="gold_madel" class="medal">Gold Medal</option>
+                        <option value="Distinction_certificate" class="medal">Distinction Certificate</option>
                     </select>
+                </div>
+
+                <div class="guest_form second_guest" id="second_guest">
+                    <h2 style="margin-bottom: 30px;">If you Invite second Guest</h2>
+                    <div class="input_container">
+                        <div class="input_box margin">
+                            <label for="guest_name">Guest Name</label>
+                            <input type="text" placeholder="Enter guest name" id="guest_name" class="input"
+                                autocomplete="off">
+                        </div>
+                        <div class="input_box">
+                            <label for="guest_f_name">Father Name </label>
+                            <input type="text" placeholder="Enter guest Father name" id="guest_f_name" class="input"
+                                autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="input_container">
+                        <div class="input_box margin">
+                            <label for="guest_cnic">Guest CNIC</label>
+                            <input type="number" placeholder="enter guest CNIC" id="guest_cnic" class="input"
+                                autocomplete="off">
+                        </div>
+                        <div class="input_box">
+                            <label for="guest_image">Guest Picture (size 25KB)</label>
+                            <input type="file" id="guest_image" class="input">
+                        </div>
+                    </div>
                 </div>
 
                 <input type="submit" class="button" value="Submit">
@@ -60,15 +91,33 @@
         var DistanguishButtonYes = document.getElementById('yes');
         var DistanguishButtonNo = document.getElementById('no');
         var DistanguishMenu = document.getElementById("select_container");
+        var secondGuest = document.getElementById("second_guest");
+        // var Medal = document.querySelectorAll(".medal");
+        var certificateSelect = document.getElementById("certificate");
+
 
         DistanguishButtonYes.addEventListener("click", () => {
             DistanguishMenu.classList.add("active");
         });
         DistanguishButtonNo.addEventListener("click", () => {
             DistanguishMenu.classList.remove("active");
+            secondGuest.classList.remove("active");
         });
 
+         // Function to show/hide the guest form based on selected medal
+    function toggleGuestFormVisibility() {
+        if (this.value === 'silver_madel' || this.value === 'gold_madel' || this.value === 'Distinction_certificate') {
+            secondGuest.classList.add("active");
+        } else {
+            secondGuest.classList.remove("active");
+        }
+    }
+
+    // Add event listener to the certificate select
+    certificateSelect.addEventListener('change', toggleGuestFormVisibility);
+
     </script>
-    
+
 </body>
+
 </html>
